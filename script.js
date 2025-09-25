@@ -91,6 +91,7 @@ async function loadData(page = 1, limit = 10, keyword = "") {
 }
 
 // Create card
+// Create card
 function createCard(item) {
     const card = document.createElement("div");
     const statusClass = item.status === "done" ? "done" : "waiting";
@@ -99,12 +100,21 @@ function createCard(item) {
     card.className = `card ${statusClass}`;
     card.dataset.no = item.no;
 
+    // Tombol Done hanya untuk waiting
     const doneButton = item.status === "done" ? "" : `
         <button class="btn primary">
             <span class="btn-text">Tandai Selesai</span>
             <span class="btn-card-spinner hidden"></span>
         </button>
     `;
+
+    // Tombol Hapus hanya untuk done
+    const deleteButton = item.status === "done" ? `
+        <button class="btn danger">
+            <span class="btn-text">Hapus</span>
+            <span class="btn-card-spinner hidden"></span>
+        </button>
+    ` : "";
 
     card.innerHTML = `
         <div class="status">${statusText}</div>
@@ -118,15 +128,11 @@ function createCard(item) {
         </div>
         <div class="actions">
             ${doneButton}
-            <button class="btn danger">
-                <span class="btn-text">Hapus</span>
-                <span class="btn-card-spinner hidden"></span>
-            </button>
+            ${deleteButton}
         </div>
     `;
     return card;
 }
-
 
 // Event delegation untuk tombol Done/Hapus
 listContainer.addEventListener("click", (e) => {
