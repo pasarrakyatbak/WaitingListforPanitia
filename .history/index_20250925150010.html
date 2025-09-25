@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting List Pelapak</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="app-bar">
+        <h1><span class="material-icons">storefront</span> Waiting List Pelapak</h1>
+        <button id="darkToggle" class="dark-toggle">
+            <span class="material-icons" id="darkIcon">dark_mode</span>
+        </button>
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+        <!-- Search -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Cari nama / jualan / WA...">
+            <button id="searchBtn" class="btn-primary"><span class="material-icons">search</span></button>
+            <button id="toggleViewBtn" class="btn-secondary">
+                <span class="material-icons">view_module</span>
+            </button>
+        </div>
+
+        <!-- Table View -->
+        <div class="table-container" id="tableView">
+            <div id="loadingSpinner" class="spinner hidden">
+                <div class="loader"></div>
+                <p>Sedang memuat data...</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Jualan</th>
+                        <th>No. WA</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Card View -->
+        <div class="card-container hidden" id="cardView">
+            <!-- Data via JS -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevBtn" class="btn-icon" disabled><span class="material-icons">chevron_left</span></button>
+            <span id="pageInfo">Halaman 1</span>
+            <button id="nextBtn" class="btn-icon"><span class="material-icons">chevron_right</span></button>
+
+            <select id="limitSelect">
+                <option value="10">10 / halaman</option>
+                <option value="20">20 / halaman</option>
+                <option value="50">50 / halaman</option>
+            </select>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Waiting List Pelapak</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

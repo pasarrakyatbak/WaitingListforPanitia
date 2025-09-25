@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting List Pelapak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- App Bar -->
+    <div class="app-bar">
+        <h1>Waiting List Pelapak</h1>
+        <div class="header-actions">
+            <!-- Search -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari nama, alamat...">
+                <button id="searchBtn" aria-label="Cari">
+                </button>
+            </div>
+
+            <!-- Toggle Dark Mode -->
+            <button id="darkSwitch" class="toggle-dark" aria-label="Ganti tema">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader hidden" id="loader">
+        <div class="spinner"></div>
+        <div>Memuat data...</div>
+    </div>
+
+    <!-- List Container -->
+    <div class="grid" id="listContainer"></div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+
+    <!-- Modal -->
+    <div class="modal hidden" id="modal">
+        <div class="modal-content">
+            <div id="modalMessage"></div>
+            <div class="modal-actions">
+                <button class="btn secondary" id="cancelBtn">Batal</button>
+                <button class="btn primary" id="confirmBtn">
+                    <span class="btn-text">Ya</span>
+                    <span class="btn-spinner hidden"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast hidden" id="toast">
+        <span id="toastMessage"></span>
+        <button id="toastClose">✖</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

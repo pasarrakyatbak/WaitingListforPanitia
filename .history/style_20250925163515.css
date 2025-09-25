@@ -1,0 +1,497 @@
+/* Reset & Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
+    color: #212121;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.4s, color 0.4s;
+    line-height: 1.6;
+}
+
+/* 🌙 Dark Mode Global */
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+/* App Bar */
+.app-bar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+.app-bar h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+}
+
+/* 🌙 Dark Mode App Bar */
+body.dark .app-bar {
+    background: linear-gradient(135deg, #0d47a1, #1565c0);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔍 Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    padding: 0.6rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.search-container:focus-within {
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+    transform: translateY(-2px);
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    background: transparent;
+    color: inherit;
+}
+
+.search-container button {
+    background: #2196f3;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.search-container button:hover {
+    background: #1976d2;
+    transform: scale(1.1);
+}
+
+/* 🌙 Dark Mode Search */
+body.dark .search-container {
+    background: #1f1f1f;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .search-container input {
+    color: #e0e0e0;
+}
+
+body.dark .search-container button {
+    background: #90caf9;
+    color: #121212;
+}
+
+body.dark .search-container button:hover {
+    background: #64b5f6;
+}
+
+/* 🌙 Dark Mode Toggle Button */
+.dark-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    margin: 0.6rem auto;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #eeeeee, #e0e0e0);
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.dark-toggle:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d5d5d5);
+    transform: translateY(-2px);
+}
+
+body.dark .dark-toggle {
+    background: linear-gradient(135deg, #2c2c2c, #1e1e1e);
+    color: #e0e0e0;
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
+}
+
+/* Loader */
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 0.8rem;
+}
+
+.loader.hidden {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #e0e0e0;
+    border-top: 4px solid #2196f3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 🌙 Dark Mode Loader */
+body.dark .spinner {
+    border: 4px solid #444;
+    border-top: 4px solid #90caf9;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+/* Card */
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.4s, color 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* 🌙 Dark Mode Card */
+body.dark .card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .card:hover {
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .card .subtitle {
+    color: #bdbdbd;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.3s ease;
+    transition: background 0.4s, color 0.4s;
+}
+
+/* 🌙 Dark Mode Modal */
+body.dark .modal-content {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: #323232;
+    color: #fff;
+    padding: 0.9rem 1.4rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 2000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.toast.success {
+    background: #4caf50;
+}
+
+.toast.error {
+    background: #f44336;
+}
+
+.toast button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* 🌙 Dark Mode Toast */
+body.dark .toast {
+    background: #444;
+    color: #fff;
+}
+
+body.dark .toast.success {
+    background: #388e3c;
+}
+
+body.dark .toast.error {
+    background: #c62828;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.2rem 0;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #2196f3;
+    background: #fff;
+    color: #2196f3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination button.active {
+    background: #2196f3;
+    color: #fff;
+}
+
+/* 🌙 Dark Mode Pagination */
+body.dark .pagination button {
+    border-color: #81c784;
+    color: #81c784;
+    background: transparent;
+}
+
+body.dark .pagination button.active {
+    background: #4caf50;
+    color: #fff;
+}
+
+/* Status umum */
+.card .status {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+}
+
+/* Waiting */
+.card.waiting {
+    background: #fff8e1;
+    border-left: 5px solid #fbc02d;
+}
+
+.card.waiting .status {
+    background: #fbc02d;
+    color: #333;
+}
+
+/* Done */
+.card.done {
+    background: #e8f5e9;
+    border-left: 5px solid #43a047;
+}
+
+.card.done .status {
+    background: #43a047;
+    color: #fff;
+}
+
+/* 🌙 Dark Mode Status */
+body.dark .card.waiting {
+    background: #2a2618;
+    border-left: 5px solid #fdd835;
+}
+
+body.dark .card.waiting .status {
+    background: #fdd835;
+    color: #212121;
+}
+
+body.dark .card.done {
+    background: #1b2d1b;
+    border-left: 5px solid #66bb6a;
+}
+
+body.dark .card.done .status {
+    background: #66bb6a;
+    color: #fff;
+}
+
+/* 📱 Responsif */
+
+/* Mobile kecil */
+@media (max-width: 480px) {
+    .app-bar h1 {
+        font-size: 1.4rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .search-container {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .search-container input {
+        font-size: 0.85rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card .title {
+        font-size: 1.2rem;
+    }
+
+    .card .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        padding: 1.2rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .app-bar h1 {
+        font-size: 1.6rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1.2rem;
+    }
+
+    .pagination {
+        gap: 0.3rem;
+    }
+
+    .pagination button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Laptop / Desktop */
+@media (min-width: 1024px) {
+    .app-bar h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .card {
+        padding: 1.8rem;
+    }
+}

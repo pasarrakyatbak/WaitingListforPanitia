@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting List Pelapak</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>📋 Waiting List Pelapak</h1>
+    </header>
+
+    <main class="container">
+        <!-- Loader -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Sedang memuat data...</p>
+        </div>
+
+        <!-- List -->
+        <div id="listContainer" class="grid"></div>
+    </main>
+
+    <!-- Modal Konfirmasi -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+            <div class="modal-actions">
+                <button id="confirmBtn" class="btn primary">Ya</button>
+                <button id="cancelBtn" class="btn secondary">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+        <button id="toastClose">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waiting List Pelapak</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>📋 Waiting List Pelapak</h1>
+        <div class="header-actions">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari nama, alamat atau WA...">
+                <button id="searchBtn" class="btn primary">Cari</button>
+            </div>
+            <button id="darkSwitch" class="btn secondary">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <!-- Loader Global -->
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Sedang memuat data...</p>
+        </div>
+
+        <!-- List Container -->
+        <div id="listContainer" class="grid"></div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="pagination"></div>
+    </main>
+
+    <!-- Modal Konfirmasi -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+            <div class="modal-actions">
+                <button id="confirmBtn" class="btn primary">
+                    <span class="btn-text">Ya</span>
+                    <span class="btn-spinner hidden"></span>
+                </button>
+                <button id="cancelBtn" class="btn secondary">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMessage"></span>
+        <button id="toastClose">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

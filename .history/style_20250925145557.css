@@ -1,0 +1,17 @@
+/* Tambahan untuk dropdown */
+#limitSelect {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Dark mode untuk dropdown */
+body.dark #limitSelect {
+    background: #1e1e1e;
+    color: #eee;
+    border: 1px solid #444;
+}
