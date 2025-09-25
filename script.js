@@ -110,7 +110,7 @@ function createCard(item) {
     // Tombol Hapus hanya untuk done
     const deleteButton = item.status === "done" ? `
         <button class="btn danger">
-            <span class="btn-text">Hapus</span>
+            <span class="btn-text">Batal</span>
             <span class="btn-card-spinner hidden"></span>
         </button>
     ` : "";
