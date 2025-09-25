@@ -91,7 +91,6 @@ async function loadData(page = 1, limit = 10, keyword = "") {
 }
 
 // Create card
-// Create card
 function createCard(item) {
     const card = document.createElement("div");
     const statusClass = item.status === "done" ? "done" : "waiting";
